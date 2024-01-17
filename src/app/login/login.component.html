@@ -1,0 +1,22 @@
+<mat-card class="col-6 mx-auto mt-3">
+  <form class="d-flex flex-column justify-content-center w-75 mx-auto pt-3" [formGroup]="loginForm" (ngSubmit)="loginSubmit()">
+    <h2>LOGIN</h2>
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input type="email"
+             matInput
+             formControlName="email">
+             <mat-error *ngIf="loginForm.controls['email'].invalid">{{getErrorMessageEmail()}}</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="mt-1">
+      <mat-label>Password</mat-label>
+      <input type="password"
+             matInput
+             formControlName="password">
+             <mat-error *ngIf="loginForm.controls['password'].invalid">You must enter a value</mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" class="mb-3" type="submit">Sign In</button>
+  </form>
+
+</mat-card>
+
